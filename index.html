@@ -6,7 +6,9 @@
   <title>Grievance Portal for My Love</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
+#entryOverlay {
+  transition: opacity 0.5s ease;
+}
 body 
   {
   background: url('https://lh3.googleusercontent.com/d/1ddHs-9bHV3_rWBajRZ-g3osPOKJjB8Ku=w1920') no-repeat center center fixed;
@@ -109,6 +111,37 @@ button:hover {
   </style>
 </head>
 <body>
+  <div id="entryOverlay" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(135deg, #f8bbd0, #fce4ec);
+  color: #4a2c48;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 20px;
+">
+  <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Hey Eshu!</h2>
+  <p style="font-size: 1rem; margin-bottom: 25px;">
+    A very good morning boobooo!! its currently 5:16 am now for me, finally worked on it almost the whole night w a little surprise in it, don't be shocked! I gotta sleep now, hope you enjoy
+LOVE YOU !! </p>
+  <button onclick="enterSite()" style="
+    background: #af3d6e;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  ">Enter</button>
+  </div>
   <div class="overlay">
   <h1>🎀 Your Personal Grievance Portal, Esha 🎀</h1>
   <p class="welcome">Welcome to <em>your</em> personal grievance corner, sonu.<br>
@@ -162,8 +195,8 @@ button:hover {
         form.reset();
         responseDiv.style.display = "block";
         responseDiv.innerHTML = `
-          <p><strong>Thank you, Eshu!</strong> Your grievance has reached Ishan's royal desk.</p>
-          <p>He’s probably overthinking it already. Chill.</p>
+          <p><strong>Thank you, Eshu!</strong> Your grievance has reached Harsh's royal desk.</p>
+          <p>I might be overthinking it already. Chill... I'll think about it (maybe)</p>
           <p><a href="#" onclick="document.getElementById('responseMessage').style.display='none'; return false;">Submit another?</a></p>
         `;
       } else {
@@ -178,6 +211,13 @@ button:hover {
       `;
     }
   });
+  function enterSite() {
+  const overlay = document.getElementById("entryOverlay");
+  overlay.style.opacity = "0";
+  setTimeout(() => {
+    overlay.style.display = "none";
+  }, 500);
+}
 </script>
   
 </body>
