@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grievance Portal for My Love</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      color: #4a2c48;
+      max-width: 480px;
+      margin: 50px auto;
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(180, 45, 95, 0.3);
+      user-select: none;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #7d2a57;
+    }
+    p.welcome {
+      font-style: italic;
+      margin-bottom: 35px;
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #732b5b;
+      font-size: 1rem;
+    }
+    input[type="text"], textarea, select, input[type="number"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin-top: 7px;
+      border-radius: 12px;
+      border: 2px solid #d880b8;
+      font-size: 1rem;
+      font-weight: 500;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+    input[type="text"]:focus, textarea:focus, select:focus, input[type="number"]:focus {
+      outline: none;
+      border-color: #a02c5a;
+      background: #fff0f8;
+    }
+    button {
+      margin-top: 30px;
+      background: #af3d6e;
+      border: none;
+      color: white;
+      padding: 15px 0;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.2rem;
+      width: 100%;
+      box-shadow: 0 5px 15px rgba(175, 61, 110, 0.4);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    button:hover {
+      background: #7b2947;
+      box-shadow: 0 7px 20px rgba(123, 41, 71, 0.7);
+    }
+    .response {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f9e7f3;
+      border-radius: 20px;
+      border: 2px solid #af3d6e;
+      font-weight: 600;
+      text-align: center;
+      color: #7d2a57;
+      font-size: 1.1rem;
+      animation: fadeIn 1s ease forwards;
+      user-select: text;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Your Personal Grievance Portal, Babe 💖</h1>
+  <p class="welcome">Welcome to <em>your</em> personal grievance corner, babe.<br>
+  Feel free to vent all your silly, petty, or serious gripes here—for my entertainment and ultimate adoration.<br>
+  Log in, spill the tea, and let me love you through your rants.</p>
+
+  <form id="grievanceForm">
+    <label for="title">Title (What’s the drama today? 🎭)</label>
+    <input type="text" id="title" name="title" placeholder="Enter your complaint title" required autocomplete="off" />
+
+    <label for="complaint">What’s bothering you? 🗣️</label>
+    <textarea id="complaint" name="complaint" rows="4" placeholder="Tell me everything, I’m all ears 👂" required></textarea>
+
+    <label for="mood">Mood (Select your vibe 😎)</label>
+    <select id="mood" name="mood" required>
+      <option value="" disabled selected>Select mood</option>
+      <option value="Annoyed">Annoyed 😒</option>
+      <option value="Frustrated">Frustrated 😤</option>
+      <option value="Tired">Tired 😴</option>
+      <option value="Hangry">Hangry 😠🍔</option>
+      <option value="Extra">Extra 💅</option>
+    </select>
+
+    <label for="severity">Severity (1 = mild eyebrow raise, 10 = full-on diva meltdown 👑)</label>
+    <input type="number" id="severity" name="severity" min="1" max="10" placeholder="Rate severity 1-10" required />
+
+    <button type="submit">Send Your Grievance 💌</button>
+  </form>
+
+  <div id="responseMessage" class="response" style="display:none;"></div>
+
+  <script>
+    const form = document.getElementById('grievanceForm');
+    const responseDiv = document.getElementById('responseMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const title = form.title.value.trim();
+      const complaint = form.complaint.value.trim();
+      const mood = form.mood.value;
+      const severity = form.severity.value;
+      const herName = "Babe"; // Customize as needed
+
+      responseDiv.style.display = 'block';
+      responseDiv.innerHTML = `Thanks, <strong>${herName}</strong>! Your grievance titled "<em>${title}</em>" has landed on my desk (aka my heart).<br>
+      Ishan will <em>definitely</em> think about it… maybe. 😉<br>
+      Feel free to submit another whenever you need to remind me how lucky I am. 💖`;
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
