@@ -93,55 +93,37 @@
   </style>
 </head>
 <body>
-  <h1>💖 Your Personal Grievance Portal, Babe 💖</h1>
-  <p class="welcome">Welcome to <em>your</em> personal grievance corner, babe.<br>
+  <h1>🎀 Your Personal Grievance Portal, Eshu 🎀</h1>
+  <p class="welcome">Welcome to <em>your</em> personal grievance corner, Esha.<br>
   Feel free to vent all your silly, petty, or serious gripes here—for my entertainment and ultimate adoration.<br>
   Log in, spill the tea, and let me love you through your rants.</p>
 
-  <form id="grievanceForm">
+  <form action="https://formspree.io/f/mpwdknwn" method="POST">
     <label for="title">Title (What’s the drama today? 🎭)</label>
     <input type="text" id="title" name="title" placeholder="Enter your complaint title" required autocomplete="off" />
 
     <label for="complaint">What’s bothering you? 🗣️</label>
     <textarea id="complaint" name="complaint" rows="4" placeholder="Tell me everything, I’m all ears 👂" required></textarea>
 
-    <label for="mood">Mood (Select your vibe 😎)</label>
+    <label for="mood">Mood (Select your vibe)</label>
     <select id="mood" name="mood" required>
       <option value="" disabled selected>Select mood</option>
       <option value="Annoyed">Annoyed 😒</option>
       <option value="Frustrated">Frustrated 😤</option>
       <option value="Tired">Tired 😴</option>
-      <option value="Hangry">Hangry 😠🍔</option>
+      <option value="Hungry">Hungry 😠🍔</option>
       <option value="Extra">Extra 💅</option>
+      <option value="Missing">Missing me (W)</option>
     </select>
 
     <label for="severity">Severity (1 = mild eyebrow raise, 10 = full-on diva meltdown 👑)</label>
     <input type="number" id="severity" name="severity" min="1" max="10" placeholder="Rate severity 1-10" required />
 
     <button type="submit">Send Your Grievance 💌</button>
+    <input type="hidden" name="_redirect" value="https://yourcustomthankyoupage.com" />
+    
   </form>
 
-  <div id="responseMessage" class="response" style="display:none;"></div>
 
-  <script>
-    const form = document.getElementById('grievanceForm');
-    const responseDiv = document.getElementById('responseMessage');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const title = form.title.value.trim();
-      const complaint = form.complaint.value.trim();
-      const mood = form.mood.value;
-      const severity = form.severity.value;
-      const herName = "Babe"; // Customize as needed
-
-      responseDiv.style.display = 'block';
-      responseDiv.innerHTML = `Thanks, <strong>${herName}</strong>! Your grievance titled "<em>${title}</em>" has landed on my desk (aka my heart).<br>
-      Ishan will <em>definitely</em> think about it… maybe. 😉<br>
-      Feel free to submit another whenever you need to remind me how lucky I am. 💖`;
-
-      form.reset();
-    });
-  </script>
 </body>
 </html>
