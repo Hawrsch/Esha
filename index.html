@@ -267,7 +267,8 @@
   <ul id="navLinks" class="nav-menu">
     <li onclick="showSection('homeSection')">Home</li>
     <li onclick="showSection('aboutSection')">Wanna Know More About Her?</li>
-    <li onclick="showSection('contactSection')">Wanna see smth cute?</li>
+
+    <li onclick="openCuteTab()">Wanna see smth cute?</li>
   </ul>
 </nav>
 <div id="aboutSection" class="section" style="display: none;">
@@ -401,6 +402,43 @@
     menu.classList.toggle('active');
   }
 </script>
+<script>
+  function openCuteTab() {
+    const password = prompt("Enter the secret password to see smth real cute:");
 
+    if (password === "ilovemybf") {
+      const newTab = window.open("", "_blank");
+      newTab.document.write(`
+        <html>
+          <head>
+            <title>MY CUTIEEE!!</title>
+            <style>
+              body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: #fff;
+                font-family: 'Poppins', sans-serif;
+              }
+              img {
+                max-width: 90%;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+              }
+            </style>
+          </head>
+          <body>
+            <img src="https://drive.google.com/uc?export=view&id=1ea33QJ52xLoRvSCucb5fXwG-ZWEJ3Wsq", alt="Cute Photo" />
+          </body>
+        </html>
+      `);
+    } else {
+      alert("Mitebadhi! try again");
+    }
+  }
+</script>
 </body>
 </html>
