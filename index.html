@@ -195,10 +195,7 @@ button:hover {
 </form>
 
 <div id="responseMessage" class="response" style="display:none;"></div>
-<audio id="bgMusic" loop>
-  <source src="https://docs.google.com/uc?export=open&id=1dnKVOpKRH9KWXJfJoJWrnY6FGwn3vr8_" type="audio/mpeg">
-  Your browser does not support the audio element.
-    </audio>
+
 <script>
   const form = document.getElementById("grievanceForm");
   const responseDiv = document.getElementById("responseMessage");
@@ -238,7 +235,10 @@ button:hover {
     }
   });
   </script> 
-    
+    <audio id="bgMusic" loop>
+  <source src="https://docs.google.com/uc?export=open&id=1dnKVOpKRH9KWXJfJoJWrnY6FGwn3vr8_" type="audio/mpeg">
+  Your browser does not support the audio element.
+    </audio>
       <script>
   const bgMusic = document.getElementById("bgMusic");
 
@@ -252,19 +252,19 @@ button:hover {
       bgMusic.pause();
     }
   }
-      </script>
-    <script>
-                         function enterSite() {
-  document.getElementById("entryOverlay").style.opacity = "0";
-  setTimeout(() => {
-    document.getElementById("entryOverlay").style.display = "none";
-    document.getElementById("bgMusic").play().catch((e) => {
-      console.warn("Autoplay blocked:", e);
-    });
-  }, 600);
-}               
-                                          </script>
-    
+                   function enterSite() {
+    const overlay = document.getElementById("entryOverlay");
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+      overlay.style.display = "none";
+      // Try playing music on interaction
+      bgMusic.play().catch((e) => {
+        console.warn("Autoplay blocked. User may need to click Play manually.");
+      });
+    }, 600);
+  }
+</script>
+      
  
 </body>
 </html>
