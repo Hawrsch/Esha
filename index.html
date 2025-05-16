@@ -210,7 +210,7 @@ button:hover {
   gap: 8px;
   transition: color 0.3s ease;
 }
-}
+
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
@@ -219,8 +219,10 @@ button:hover {
   </style>
 </head>
 <body>
+  
   <nav class="navbar">
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Open menu">☰</div>
+  
   <ul id="navLinks" class="nav-menu">
     <li onclick="showSection('homeSection')">Home</li>
     <li onclick="showSection('aboutSection')">Wanna Know More About Her?</li>
