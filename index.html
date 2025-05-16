@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grievance Portal for My Love</title>
   <style>
+    .navbar {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 10000;
+}
+
+.hamburger {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: #ffaad4;
+}
     #entryOverlay {
   position: fixed;
   top: 0;
@@ -150,6 +183,15 @@ button:hover {
   </style>
 </head>
 <body>
+  <div class="navbar">
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div id="menu" class="nav-links">
+    <a href="#form">Submit Grievance</a>
+    <a href="#about">About</a>
+    <a href="#responseMessage">Responses</a>
+  </div>
+  </div>
+  
   <div id="entryOverlay">
   <div>
     <h2>Welcome, Eshu!</h2>
@@ -158,9 +200,6 @@ button:hover {
   <button id="enterButton" onclick="enterSite()">Enter Portal</button>
     
 <br><br>
-<button onclick="document.getElementById('bgMusic').play()" style="margin-top: 10px; padding: 10px 20px; border: none; border-radius: 25px; background-color: #b8527b; color: white; font-weight: bold; cursor: pointer;">
-  Tap if music didn’t start
-</button>
   </div>
 </div>
   <div class="overlay">
@@ -168,11 +207,7 @@ button:hover {
   <p class="welcome">Welcome to <em>your</em> personal grievance corner, sonu.<br>
   Feel free to vent all your silly, petty, or serious gripes here—for my entertainment and ultimate adoration.<br>
   Log in, spill the tea, and let me love you through your rants.</p>
-    <div style="margin-top: 30px; text-align: center;">
-  <button onclick="toggleMusic()" style="padding: 10px 20px; border: none; border-radius: 25px; background-color: #d94670; color: white; font-weight: bold; cursor: pointer;">
-    Play/Pause Music
-  </button>
-</div>
+  
 <form id="grievanceForm">
   <label for="title">Title</label>
   <input type="text" id="title" name="title"/>
@@ -238,37 +273,12 @@ button:hover {
     }
   });
   </script>
-    <audio id="bgMusic" loop>
-  <source src="/mnt/data/stj--dev--srabanti--mimi--soham--ash-king--somlata--arindom--svf.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-   
-      <script>
-  const bgMusic = document.getElementById("bgMusic");
-
-  function toggleMusic() {
-    if (bgMusic.paused) {
-      bgMusic.play().catch((err) => {
-        alert("Music couldn't play automatically. Tap to allow.");
-        console.error("Playback error:", err);
-      });
-    } else {
-      bgMusic.pause();
-    }
-  }
-        function enterSite() {
-  const music = document.getElementById("bgMusic");
-  music.play().catch((e) => {
-    alert("Music couldn't play automatically. Please tap the Play button.");
-  });
-  
-  // Then hide overlay with fade out
-  document.getElementById("entryOverlay").style.opacity = "0";
-  setTimeout(() => {
-    document.getElementById("entryOverlay").style.display = "none";
-  }, 600);
-}
-  
+    
+<script>
+        function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
 </script>
       
  
