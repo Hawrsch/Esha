@@ -201,6 +201,11 @@ button:hover {
   <p class="welcome">Welcome to <em>your</em> personal grievance corner, sonu.<br>
   Feel free to vent all your silly, petty, or serious gripes here—for my entertainment and ultimate adoration.<br>
   Log in, spill the tea, and let me love you through your rants.</p>
+    <div style="margin-top: 30px; text-align: center;">
+  <button onclick="toggleMusic()" style="padding: 10px 20px; border: none; border-radius: 25px; background-color: #d94670; color: white; font-weight: bold; cursor: pointer;">
+    Play/Pause Music
+  </button>
+</div>
 <form id="grievanceForm">
   <label for="title">Title</label>
   <input type="text" id="title" name="title" required />
@@ -273,6 +278,21 @@ button:hover {
       document.getElementById("entryOverlay").style.display = "none";
     }, 600);
   }
+      <audio id="bgMusic" autoplay loop>
+  <source src="https://docs.google.com/uc?export=open&id=1dnKVOpKRH9KWXJfJoJWrnY6FGwn3vr8_" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 </script>
+    <script>
+  const bgMusic = document.getElementById("bgMusic");
+
+  function toggleMusic() {
+    if (bgMusic.paused) {
+      bgMusic.play();
+    } else {
+      bgMusic.pause();
+    }
+  }
+    </script>
 </body>
 </html>
