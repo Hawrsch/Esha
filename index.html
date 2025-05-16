@@ -209,18 +209,17 @@ button:hover {
 </head>
 <body>
   <nav class="navbar">
-  <div class="hamburger" onclick="toggleMenu()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
-  <ul class="nav-menu" id="navMenu">
-    <li><a href="#">Home</a></li>
-    <li><a href="#grievanceForm">Submit Grievance</a></li>
-    <li><a href="#">About Us</a></li>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul id="navLinks" class="nav-links">
+    <li onclick="showSection('homeSection')">Home</li>
+    <li onclick="showSection('aboutSection')">Wanna Know More About Her?</li>
+    <li onclick="showSection('contactSection')">Wanna see smth cute?</li>
   </ul>
-  </nav>
-  
+</nav>
+
+<div id="homeSection" class="section">Welcome to Home</div>
+<div id="aboutSection" class="section" style="display: none;">About me section</div>
+<div id="contactSection" class="section" style="display: none;">Contact details section</div>
   <div id="entryOverlay">
   <div>
     <h2>Welcome, Eshu!</h2>
@@ -277,9 +276,7 @@ button:hover {
     <a href="" target="_blank">
       <i class="fab fa-discord"></i> Discord
     </a>
-    <a href="mailto:maharshi.0020@gmail.com">
-      <i class="fas fa-envelope"></i> Email
-    </a>
+    
   </div>
   <p style="margin-top: 10px;">Built with care by Harsh</p>
 </footer>
@@ -332,11 +329,22 @@ button:hover {
       overlay.style.display = "none";
     }, 600);
   }
-    function toggleMenu() {
-  const menu = document.getElementById("navMenu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
+    
         
+</script>
+    <script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.style.display = 'none');
+
+    document.getElementById(sectionId).style.display = 'block';
+    toggleMenu(); // Optional: close menu after clicking
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById('navLinks');
+    menu.classList.toggle('active');
+  }
 </script>
       
  
