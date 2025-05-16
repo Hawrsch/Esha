@@ -11,8 +11,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f8bbd0, #fce4ec); /* light pink */
-  color: #2a0e22; /* deep text color for contrast */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: #2a0e22;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -23,8 +25,10 @@
   transition: opacity 0.6s ease;
   overflow-y: auto;
   font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
 }
-
 #entryOverlay h2 {
   font-size: 1.8rem;
   margin-bottom: 25px;
@@ -147,7 +151,37 @@ button:hover {
   animation: fadeIn 1s ease forwards;
   user-select: text;
 }
+#entryOverlay h2 {
+  font-size: 2rem;
+  color: #4b0147;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+}
 
+#entryOverlay p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a0e22;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+#entryOverlay button {
+  padding: 14px 32px;
+  background: linear-gradient(145deg, #d94670, #b8355c);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(184, 53, 92, 0.5);
+  transition: background 0.3s ease;
+}
+
+#entryOverlay button:hover {
+  background: #972b4f;
+}
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
