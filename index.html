@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grievance Portal for My Love</title>
   <style>
-    #entryOverlay {
+ #entryOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -50,7 +50,7 @@
 
 #entryOverlay button:hover {
   background-color: #7b2947;
-} 
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 }
 body 
@@ -158,14 +158,23 @@ button:hover {
   <div>
     <h2>Welcome, Eshu!</h2>
     <p>
-       A very good morning BOOBOOO!!! Huhh finally almost done w my editing stuff, its almost 5:50 now and 
+       A very good morning BOOBOOO!!! Huhh finally almost done w my editing stuff, its almost 6 am now and 
     I didn't even realise it, anyways! got a little surprise for you inside, might be shocked, nvm it okay? now I gotta sleep or else im done, giving you morning wishes thru this and...love you!!!!
    </p>
     <button onclick="enterSite()">Enter Portal</button>
   </div>
 </div>
 <body>
-  
+  <div id="entryOverlay">
+  <div>
+    <h2>Welcome, Eshu!</h2>
+    <p>A very good morning BOOBOOO!!! Huhh finally almost done w my editing stuff, its almost 5:30 now and 
+    I didn't even realise it, anyways! got a little surprise for you inside, might be shocked, nvm it okay? now I gotta sleep or else im done, giving you morning wishes thru this and...love you!!!!
+  </p>
+      
+    <button id="enterButton">Enter Portal</button>
+  </div>
+</div>
   <div class="overlay">
   <h1>🎀 Your Personal Grievance Portal, Esha 🎀</h1>
   <p class="welcome">Welcome to <em>your</em> personal grievance corner, sonu.<br>
@@ -235,8 +244,8 @@ button:hover {
       `;
     }
   });
-  
-  <script>
+  </script> 
+    <script>
   function enterSite() {
     document.getElementById("entryOverlay").style.opacity = "0";
     setTimeout(() => {
@@ -244,7 +253,6 @@ button:hover {
     }, 600);
   }
   
-</script>
-  </script> 
+    </script>
 </body>
 </html>
