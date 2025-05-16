@@ -7,6 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grievance Portal for My Love</title>
   <style>
+    .nav-menu.active {
+  display: flex;
+}
+
+.section {
+  display: none;
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1.5rem;
+}
    .navbar {
   position: fixed;
   top: 20px;
@@ -189,7 +200,7 @@ button:hover {
   animation: fadeIn 1s ease forwards;
   user-select: text;
 }
-.footer .social-icons a {
+    .footer .social-icons a {
   color: #d94670;
   text-decoration: none;
   font-weight: 600;
@@ -198,7 +209,7 @@ button:hover {
   align-items: center;
   gap: 8px;
   transition: color 0.3s ease;
-  }
+}
 }
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}
