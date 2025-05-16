@@ -2,41 +2,57 @@
 <html lang="en">
 <head> 
   <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grievance Portal for My Love</title>
   <style>
-    .navbar {
+   .navbar {
   position: fixed;
-  top: 15px;
-  left: 20px;
+  top: 20px;
+  right: 20px;
   z-index: 10000;
 }
 
 .hamburger {
-  font-size: 30px;
-  color: white;
   cursor: pointer;
-  user-select: none;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.nav-links {
+.bar {
+  height: 4px;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.nav-menu {
+  list-style: none;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  border-radius: 12px;
+  padding: 10px 20px;
   display: none;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-top: 10px;
+  gap: 15px;
+  z-index: 9999;
 }
 
-.nav-links a {
-  color: white;
+.nav-menu a {
+  color: #fff;
   text-decoration: none;
-  padding: 10px 0;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.nav-links a:hover {
-  color: #ffaad4;
+.nav-menu a:hover {
+  color: #d94670;
 }
     #entryOverlay {
   position: fixed;
@@ -173,7 +189,16 @@ button:hover {
   animation: fadeIn 1s ease forwards;
   user-select: text;
 }
-
+.footer .social-icons a {
+  color: #d94670;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  }
 }
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}
@@ -183,14 +208,18 @@ button:hover {
   </style>
 </head>
 <body>
-  <div class="navbar">
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <div id="menu" class="nav-links">
-    <a href="#form">Submit Grievance</a>
-    <a href="#about">About</a>
-    <a href="#responseMessage">Responses</a>
+  <nav class="navbar">
+  <div class="hamburger" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
-  </div>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#grievanceForm">Submit Grievance</a></li>
+    <li><a href="#">About Us</a></li>
+  </ul>
+  </nav>
   
   <div id="entryOverlay">
   <div>
@@ -231,8 +260,29 @@ button:hover {
 
   <button type="submit">Submit</button>
 </form>
-
+    
 <div id="responseMessage" class="response" style="display:none;"></div>
+    <footer class="footer">
+  <p>Let's connect!</p>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/hawrsch?igsh=OHJxYmFoZmkzNmhl" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://open.spotify.com/user/31utlpmn5yzb3pumke3alrrh4vr4?si=npDFuH_GQLCpoCrQXcy6FA" target="_blank">
+      <i class="fab fa-spotify"></i> Spotify
+    </a>
+    <a href="https://github.com/hawrsch" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="" target="_blank">
+      <i class="fab fa-discord"></i> Discord
+    </a>
+    <a href="mailto:maharshi.0020@gmail.com">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+  </div>
+  <p style="margin-top: 10px;">Built with care by Harsh</p>
+</footer>
 
 <script>
   const form = document.getElementById("grievanceForm");
@@ -282,10 +332,11 @@ button:hover {
       overlay.style.display = "none";
     }, 600);
   }
-        function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-        }
+    function toggleMenu() {
+  const menu = document.getElementById("navMenu");
+  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+        
 </script>
       
  
