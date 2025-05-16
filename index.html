@@ -158,6 +158,11 @@ button:hover {
   </p>
       
   <button id="enterButton" onclick="enterSite()">Enter Portal</button>
+    
+<br><br>
+<button onclick="document.getElementById('bgMusic').play()" style="margin-top: 10px; padding: 10px 20px; border: none; border-radius: 25px; background-color: #b8527b; color: white; font-weight: bold; cursor: pointer;">
+  Tap if music didn’t start
+</button>
   </div>
 </div>
   <div class="overlay">
@@ -253,17 +258,19 @@ button:hover {
       bgMusic.pause();
     }
   }
-  function enterSite() {
-    document.getElementById("entryOverlay").style.opacity = "0";
-    setTimeout(() => {
-      document.getElementById("entryOverlay").style.display = "none";
-      const music = document.getElementById("bgMusic");
-      music.play().catch((e) => {
-        console.warn("Autoplay blocked:", e);
-        alert("Tap play to start music!");
-      });
-    }, 600);
-  }
+        function enterSite() {
+  const music = document.getElementById("bgMusic");
+  music.play().catch((e) => {
+    alert("Music couldn't play automatically. Please tap the Play button.");
+  });
+  
+  // Then hide overlay with fade out
+  document.getElementById("entryOverlay").style.opacity = "0";
+  setTimeout(() => {
+    document.getElementById("entryOverlay").style.display = "none";
+  }, 600);
+}
+  
 </script>
       
  
