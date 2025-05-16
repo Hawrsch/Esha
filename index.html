@@ -7,247 +7,253 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grievance Portal for My Love</title>
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-body {
-  background: url('https://lh3.googleusercontent.com/d/1ddHs-9bHV3_rWBajRZ-g3osPOKJjB8Ku=w1920') no-repeat center center fixed;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
+    body {
+      background: url('https://lh3.googleusercontent.com/d/1ddHs-9bHV3_rWBajRZ-g3osPOKJjB8Ku=w1920') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .overlay {
+      padding: 20px 10px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+      background: rgba(0, 0, 0, 0.6); 
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: white;
+      font-size: 1.8rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p, label {
+      font-size: 0.95rem;
+    }
+
+    .section {
+      display: none;
+      color: white;
+      text-align: center;
+      margin: 20px auto;
+      font-size: 1.5rem;
+    }
 
     .nav-menu.active {
-  display: flex;
-}
-@media (max-width: 480px) {
-  .overlay {
-    padding: 20px 10px;
-  }
-.navbar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 10000;
-  background: rgba(0, 0, 0, 0.6); 
-  padding: 10px;
-  border-radius: 12px;
-}
-  .hamburger {
-  cursor: pointer;
-  width: 30px;
-  height: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white; /* 
-  font-size: 1.8rem;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-
-  p, label {
-    font-size: 0.95rem;
-  }
-}
-.section {
-  display: none;
-  color: white;
-  text-align: center;
-  margin: 20px auto;
-  font-size: 1.5rem;
-}
-   .navbar {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 10000;
-}
-
-.hamburger {
-  cursor: pointer;
-  width: 30px;
-  height: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.bar {
-  height: 4px;
-  background-color: #fff;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.nav-menu {
-  list-style: none;
-  background: rgba(0, 0, 0, 0.85);
-  position: fixed;
-  top: 60px;
-  right: 20px;
-  border-radius: 12px;
-  padding: 10px 20px;
-  display: none;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 9999;
-}
-
-.nav-menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.nav-menu a:hover {
-  color: #d94670;
-}
-    #entryOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(255, 240, 245, 0.95);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.6s ease;
+      display: flex;
     }
-#entryOverlay h2 {
-  font-size: 2rem;
-  color: #4b0147;
-  margin-bottom: 20px;
-}
 
-#entryOverlay p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #3a0035;
-  max-width: 500px;
-  margin-bottom: 30px;
-}
-#entryOverlay button {
-  padding: 14px 32px;
-  background-color: #af3d6e;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+    .navbar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+    }
 
-#entryOverlay button:hover {
-  background-color: #7b2947;
-}
+    .hamburger {
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
+    .bar {
+      height: 4px;
+      background-color: #fff;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.6);
-  min-height: 100vh;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-  border-radius: 20px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
+    .nav-menu {
+      list-style: none;
+      background: rgba(0, 0, 0, 0.85);
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      border-radius: 12px;
+      padding: 10px 20px;
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 9999;
+    }
 
-h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #fff9fc;
-  text-align: center;
-}
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
-p {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: #f1e7f1;
-  text-align: center;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
+    .nav-menu a:hover {
+      color: #d94670;
+    }
 
-label {
-  display: block;
-  margin-top: 20px;
-  font-weight: 600;
-  color: #f6d9f0;
-  font-size: 1rem;
-}
+    #entryOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(255, 240, 245, 0.95);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.6s ease;
+    }
 
-input[type="text"], textarea, select, input[type="number"] {
-  width: 100%;
-  padding: 12px 15px;
-  margin-top: 7px;
-  border-radius: 12px;
-  border: none;
-  font-size: 1rem;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.85);
-  color: #3e2040;
-}
+    #entryOverlay h2 {
+      font-size: 2rem;
+      color: #4b0147;
+      margin-bottom: 20px;
+    }
 
-button {
-  margin-top: 30px;
-  background: #d94670;
-  border: none;
-  color: white;
-  padding: 15px 0;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1.2rem;
-  width: 100%;
-  box-shadow: 0 5px 15px rgba(217, 70, 112, 0.5);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
+    #entryOverlay p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #3a0035;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
 
-button:hover {
-  background: #b8355c;
-  box-shadow: 0 7px 20px rgba(184, 53, 92, 0.7);
-}
+    #entryOverlay button {
+      padding: 14px 32px;
+      background-color: #af3d6e;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-.response {
-  margin-top: 30px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  border: 2px solid #d94670;
-  font-weight: 600;
-  text-align: center;
-  color: #fff;
-  font-size: 1.1rem;
-  animation: fadeIn 1s ease forwards;
-  user-select: text;
-}
+    #entryOverlay button:hover {
+      background-color: #7b2947;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #ffffff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #fff9fc;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #f1e7f1;
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #f6d9f0;
+      font-size: 1rem;
+    }
+
+    input[type="text"], textarea, select, input[type="number"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin-top: 7px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.85);
+      color: #3e2040;
+    }
+
+    button {
+      margin-top: 30px;
+      background: #d94670;
+      border: none;
+      color: white;
+      padding: 15px 0;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.2rem;
+      width: 100%;
+      box-shadow: 0 5px 15px rgba(217, 70, 112, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background: #b8355c;
+      box-shadow: 0 7px 20px rgba(184, 53, 92, 0.7);
+    }
+
+    .response {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      border: 2px solid #d94670;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      font-size: 1.1rem;
+      animation: fadeIn 1s ease forwards;
+      user-select: text;
+    }
+
     .footer .social-icons a {
-  color: #d94670;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.3s ease;
-}
+      color: #d94670;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-  
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
@@ -265,49 +271,50 @@ button:hover {
 <div id="homeSection" class="section">Welcome to Home</div>
 <div id="aboutSection" class="section" style="display: none;">About me section</div>
 <div id="contactSection" class="section" style="display: none;">Contact details section</div>
-  <div id="entryOverlay">
+
+<div id="entryOverlay">
   <div>
     <h2>Welcome, Eshu!</h2>
     <p>itni zaldi?</p>
       
   <button id="enterButton" onclick="enterSite()">Enter Portal</button>
-    
-<br><br>
   </div>
 </div>
-  <div class="overlay">
+
+<div class="overlay">
   <h1>🎀 Your Personal Grievance Portal, Esha 🎀</h1>
   <p class="welcome">Welcome to <em>your</em> personal grievance corner, sonu.<br>
   Feel free to vent all your silly, petty, or serious gripes here—for my entertainment and ultimate adoration.<br>
   Log in, spill the tea, and let me love you through your rants.</p>
   
-<form id="grievanceForm">
-  <label for="title">Title</label>
-  <input type="text" id="title" name="title"/>
+  <form id="grievanceForm">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title"/>
 
-  <label for="complaint">What’s bothering you?</label>
-  <textarea id="complaint" name="complaint" required></textarea>
+    <label for="complaint">What’s bothering you?</label>
+    <textarea id="complaint" name="complaint" required></textarea>
 
-  <label for="mood">Mood</label>
-  <select id="mood" name="mood" required>
-    <option value="" disabled selected>Select mood</option>
-    <option value="Annoyed">Annoyed</option>
-    <option value="Frustrated">Frustrated</option>
-    <option value="Tired">Tired</option>
-    <option value="Hungry">Hungry</option>
-    <option value="Extra">Extra</option>
-    <option value="Missing_Me">Missing me (cutieee)</option>
-  </select>
+    <label for="mood">Mood</label>
+    <select id="mood" name="mood" required>
+      <option value="" disabled selected>Select mood</option>
+      <option value="Annoyed">Annoyed</option>
+      <option value="Frustrated">Frustrated</option>
+      <option value="Tired">Tired</option>
+      <option value="Hungry">Hungry</option>
+      <option value="Extra">Extra</option>
+      <option value="Missing_Me">Missing me (cutieee)</option>
+    </select>
 
-  <label for="severity">Severity (1-10)</label>
-  <input type="number" id="severity" name="severity" min="1" max="10" required />
+    <label for="severity">Severity (1-10)</label>
+    <input type="number" id="severity" name="severity" min="1" max="10" required />
 
-  <button type="submit">Submit</button>
-</form>
-    
-<div id="responseMessage" class="response" style="display:none;"></div>
-  </div>
-    <footer class="footer">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div id="responseMessage" class="response" style="display:none;"></div>
+</div>
+
+<footer class="footer">
   <p>Let's connect!</p>
   <div class="social-icons">
     <a href="https://www.instagram.com/hawrsch?igsh=OHJxYmFoZmkzNmhl" target="_blank">
@@ -322,7 +329,6 @@ button:hover {
     <a href="" target="_blank">
       <i class="fab fa-discord"></i> Discord
     </a>
-    
   </div>
   <p style="margin-top: 10px;">Built with care by Harsh</p>
 </footer>
@@ -365,9 +371,9 @@ button:hover {
       `;
     }
   });
-  </script>
-    
-  <script>
+</script>
+
+<script>
   function enterSite() {
     const overlay = document.getElementById("entryOverlay");
     overlay.style.opacity = "0";
@@ -375,10 +381,7 @@ button:hover {
       overlay.style.display = "none";
     }, 600);
   }
-    
-        
-</script>
-    <script>
+
   function showSection(sectionId) {
     const sections = document.querySelectorAll('.section');
     sections.forEach(sec => sec.style.display = 'none');
@@ -392,7 +395,6 @@ button:hover {
     menu.classList.toggle('active');
   }
 </script>
-      
- 
+
 </body>
 </html>
