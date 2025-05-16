@@ -195,7 +195,10 @@ button:hover {
 </form>
 
 <div id="responseMessage" class="response" style="display:none;"></div>
-
+<audio id="bgMusic" loop>
+  <source src="https://docs.google.com/uc?export=open&id=1dnKVOpKRH9KWXJfJoJWrnY6FGwn3vr8_" type="audio/mpeg">
+  Your browser does not support the audio element.
+    </audio>
 <script>
   const form = document.getElementById("grievanceForm");
   const responseDiv = document.getElementById("responseMessage");
@@ -235,15 +238,7 @@ button:hover {
     }
   });
   </script> 
-    <script>
-  function enterSite() {
-    document.getElementById("entryOverlay").style.opacity = "0";
-    setTimeout(() => {
-      document.getElementById("entryOverlay").style.display = "none";
-    }, 600);
-  }
-    </script>
-      
+    
       <script>
   const bgMusic = document.getElementById("bgMusic");
 
@@ -270,9 +265,6 @@ button:hover {
 }               
                                           </script>
     
-    <audio id="bgMusic" loop>
-  <source src="https://docs.google.com/uc?export=open&id=1dnKVOpKRH9KWXJfJoJWrnY6FGwn3vr8_" type="audio/mpeg">
-  Your browser does not support the audio element.
-    </audio>
+ 
 </body>
 </html>
