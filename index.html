@@ -274,7 +274,14 @@ button:hover {
   });
   </script>
     
-<script>
+  <script>
+  function enterSite() {
+    const overlay = document.getElementById("entryOverlay");
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 600);
+  }
         function toggleMenu() {
   const menu = document.getElementById("menu");
   menu.style.display = menu.style.display === "flex" ? "none" : "flex";
