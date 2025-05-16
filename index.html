@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Grievance Portal for My Love</title>
   <style>
+    #entryOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 240, 245, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.6s ease;
+    }
 #entryOverlay h2 {
   font-size: 2rem;
   color: #4b0147;
@@ -127,36 +140,7 @@ button:hover {
   animation: fadeIn 1s ease forwards;
   user-select: text;
 }
-#entryOverlay h2 {
-  font-size: 2rem;
-  color: #4b0147;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
-}
 
-#entryOverlay p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #2a0e22;
-  max-width: 500px;
-  margin-bottom: 30px;
-}
-
-#entryOverlay button {
-  padding: 14px 32px;
-  background: linear-gradient(145deg, #d94670, #b8355c);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(184, 53, 92, 0.5);
-  transition: background 0.3s ease;
-}
-
-#entryOverlay button:hover {
-  background: #972b4f;
 }
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}
