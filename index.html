@@ -6,8 +6,6 @@
   <title>Grievance Portal for My Love</title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-#entryOverlay {
-  transition: opacity 0.5s ease;
 }
 body 
   {
@@ -115,33 +113,35 @@ button:hover {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
-  background: linear-gradient(135deg, #f8bbd0, #fce4ec);
+  background: linear-gradient(120deg, #ffe4ec, #ffd6f3);
   color: #4a2c48;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
+  z-index: 9999;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
+  transition: opacity 0.6s ease;
 ">
-  <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Hey Eshu!</h2>
-  <p style="font-size: 1rem; margin-bottom: 25px;">
-    A very good morning boobooo!! its currently 5:16 am now for me, finally worked on it almost the whole night w a little surprise in it, don't be shocked! I gotta sleep now, hope you enjoy
-LOVE YOU !! </p>
+  <h2 style="font-size: 2rem; margin-bottom: 20px; font-weight: 700;">Hey Eshu, Welcome to Your Drama Desk!</h2>
+  <p style="font-size: 1.1rem; max-width: 600px; line-height: 1.6; margin-bottom: 30px;">
+    A very good morning BOOBOOO!!! Huhh finally almost done w my editing stuff, its almost 5:30 now and 
+    I didn't even realise it, anyways! got a little surprise for you inside, might be shocked, nvm it okay? now I gotta sleep or else im done, giving you morning wishes thru this and...love you!!!!
+  </p>
   <button onclick="enterSite()" style="
     background: #af3d6e;
     color: white;
-    padding: 12px 28px;
-    border-radius: 25px;
+    padding: 14px 30px;
+    border-radius: 30px;
     border: none;
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  ">Enter</button>
-  </div>
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  ">Enter Portal</button>
+</div>
   <div class="overlay">
   <h1>🎀 Your Personal Grievance Portal, Esha 🎀</h1>
   <p class="welcome">Welcome to <em>your</em> personal grievance corner, sonu.<br>
@@ -211,14 +211,16 @@ LOVE YOU !! </p>
       `;
     }
   });
-  function enterSite() {
-  const overlay = document.getElementById("entryOverlay");
-  overlay.style.opacity = "0";
-  setTimeout(() => {
-    overlay.style.display = "none";
-  }, 500);
-}
-</script>
   
+</script>
+  <script>
+  function enterSite() {
+    const overlay = document.getElementById("entryOverlay");
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 600);
+  }
+</script>
 </body>
 </html>
