@@ -235,10 +235,10 @@ button:hover {
     }
   });
   </script> 
-    <audio id="bgMusic" loop>
-  <source src="https://docs.google.com/uc?export=open&id=1dnKVOpKRH9KWXJfJoJWrnY6FGwn3vr8_" type="audio/mpeg">
-  Your browser does not support the audio element.
-    </audio>
+    <audio id="bgMusic" preload="auto" loop>
+  <source src="https://docs.google.com/uc?export=preview&id=1dnKVOpKRH9KWXJfJoJWrnY6FGwn3vr8_" type="audio/mpeg">
+</audio>
+    
       <script>
   const bgMusic = document.getElementById("bgMusic");
 
@@ -252,17 +252,17 @@ button:hover {
       bgMusic.pause();
     }
   }
-                   function enterSite() {
-    const overlay = document.getElementById("entryOverlay");
-    overlay.style.opacity = "0";
-    setTimeout(() => {
-      overlay.style.display = "none";
-      // Try playing music on interaction
-      bgMusic.play().catch((e) => {
-        console.warn("Autoplay blocked. User may need to click Play manually.");
-      });
-    }, 600);
-  }
+          function enterSite() {
+  document.getElementById("entryOverlay").style.opacity = "0";
+  setTimeout(() => {
+    document.getElementById("entryOverlay").style.display = "none";
+    const music = document.getElementById("bgMusic");
+    music.volume = 1.0;
+    music.play().catch(err => {
+      console.warn("Autoplay blocked:", err);
+    });
+  }, 600);
+}         
 </script>
       
  
