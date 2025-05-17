@@ -466,20 +466,23 @@
   }
 </script>
   <script>
+  window.onload = function () {
   const moodSelect = document.getElementById("mood-select");
   const messageDiv = document.getElementById("mood-message");
 
   const messages = {
     happy: "You’re glowing, my sunshine! Keep that smile on.",
-    sad: "Don't be sad bbg, I'm here....lets talk", 
+    sad: "Don't be sad bbg, I'm here....lets talk",
     angry: "Deep breaths, love. I’m on your side always.",
     tired: "Close your eyes. I’ll be dreaming next to you.",
     loved: "You’re making me blush. I feel it too."
   };
-    moodSelect.addEventListener("change", function () {
+
+  moodSelect.addEventListener("change", function () {
     const mood = moodSelect.value;
     messageDiv.innerText = messages[mood] || "";
   });
-      </script>
+};
+  </script>
 </body>
 </html>
