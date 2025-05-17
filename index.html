@@ -318,7 +318,7 @@
 </nav>
 <div id="aboutSection" class="section" style="display: none;">
   <h2>Wanna Know More About Her?</h2>
-  <p>As I told before, poetry herself!</p>
+  <p>As I told you before "poetry herself!"</p>
   
   <a href="https://open.spotify.com/playlist/0S9w6vaacPNW7Id2yQfG5K?si=qXX_7dWKSNqWstfEeM0cDQ" target="_blank" class="lux-button">
     Find out here, My playlist answers
@@ -471,25 +471,11 @@
 
   const messages = {
     happy: "You’re glowing, my sunshine! Keep that smile on.",
-    sad: '<div id="moodResponse"></div>', 
+    sad: "Don't be sad bbg, I'm here....lets talk", 
     angry: "Deep breaths, love. I’m on your side always.",
     tired: "Close your eyes. I’ll be dreaming next to you.",
     loved: "You’re making me blush. I feel it too."
   };
       </script>
-<script>
-  moodSelect.addEventListener("change", function () {
-    const mood = moodSelect.value;
-    messageDiv.innerText = messages[mood] || "";
-  });
-  document.getElementById("moodResponse").innerHTML = 
-    `I’m right here, sweety... just a tap away 
-     <button onclick="callMe()" class="call-me-button">Click here boo</button>`;
-
-  function callMe() {
-    window.location.href = "tel:+917032562770";
-  }
-</script>
-
 </body>
 </html>
