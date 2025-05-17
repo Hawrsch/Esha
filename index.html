@@ -476,6 +476,10 @@
     tired: "Close your eyes. I’ll be dreaming next to you.",
     loved: "You’re making me blush. I feel it too."
   };
+    moodSelect.addEventListener("change", function () {
+    const mood = moodSelect.value;
+    messageDiv.innerText = messages[mood] || "";
+  });
       </script>
 </body>
 </html>
