@@ -467,23 +467,21 @@
   }
 </script>
   <script>
-  function showMoodMessage() {
-    const mood = document.getElementById("mood-select").value;
-    const messageDiv = document.getElementById("mood-message");
+  const moodSelect = document.getElementById("mood-select");
+  const messageDiv = document.getElementById("mood-message");
 
-    const messages = {
-      happy: "You’re glowing, my sunshine! Keep that smile on.",
-      sad: "I’m right here, sweety. Just a tap away!" <button onclick="callMe()" class="call-me-button">Click here boo</button>,
-      angry: "Deep breaths, love. I’m on your side always.",
-      tired: "Close your eyes. I’ll be dreaming next to you.",
-      loved: "You’re making me blush. I feel it too."
-    };
+  const messages = {
+    happy: "You’re glowing, my sunshine! Keep that smile on.",
+    sad: "I’m right here, sweety. Let’s talk.",
+    angry: "Deep breaths, love. I’m on your side always.",
+    tired: "Close your eyes. I’ll be dreaming next to you.",
+    loved: "You’re making me blush. I feel it too."
+  };
 
+  moodSelect.addEventListener("change", function () {
+    const mood = moodSelect.value;
     messageDiv.innerText = messages[mood] || "";
-  }
-    function callMe() {
-  window.location.href = "tel:+917032562770";
-    }
+  });
 </script>
 
 </body>
