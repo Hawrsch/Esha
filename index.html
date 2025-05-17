@@ -265,6 +265,23 @@
   color: #e91e63;
   animation: fadeIn 0.6s ease-in;
 }
+    .call-me-button {
+  display: inline-block;
+  background-color: #ff69b4;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.call-me-button:hover {
+  background-color: #ff85c1;
+  transform: scale(1.05);
+}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
@@ -456,7 +473,7 @@
 
     const messages = {
       happy: "You’re glowing, my sunshine! Keep that smile on.",
-      sad: "I’m right here, baby. Let’s talk or cuddle soon.",
+      sad: "I’m right here, sweety. Just a tap away! <a href="tel:+917032562770" class="call-me-button">Click Here Boo</a>",
       angry: "Deep breaths, love. I’m on your side always.",
       tired: "Close your eyes. I’ll be dreaming next to you.",
       loved: "You’re making me blush. I feel it too."
