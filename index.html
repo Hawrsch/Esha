@@ -353,8 +353,8 @@
       <option value="Frustrated">Frustrated</option>
       <option value="Tired">Tired</option>
       <option value="Hungry">Hungry</option>
-      <option value="Extra">Extra</option>
-      <option value="Missing_Me">Missing me (cutieee)</option>
+
+      <option value="Missing_Me">Missing me? (cutieee)</option>
     </select>
 
     <label for="severity">Severity (1-10)</label>
@@ -372,7 +372,6 @@
     <option value="happy">Happy</option>
     <option value="sad">Sad</option>
     <option value="angry">Angry</option>
-    <option value="tired">Tired</option>
     <option value="loved">Loved</option>
   </select>
   <div id="mood-message" class="mood-message"></div>
@@ -472,12 +471,13 @@
 
   const messages = {
     happy: "You’re glowing, my sunshine! Keep that smile on.",
-    sad: "<div id="moodResponse"></div>"
+    sad: '<div id="moodResponse"></div>', 
     angry: "Deep breaths, love. I’m on your side always.",
     tired: "Close your eyes. I’ll be dreaming next to you.",
     loved: "You’re making me blush. I feel it too."
   };
-
+      </script>
+<script>
   moodSelect.addEventListener("change", function () {
     const mood = moodSelect.value;
     messageDiv.innerText = messages[mood] || "";
